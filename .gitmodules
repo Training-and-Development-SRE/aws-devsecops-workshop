@@ -1,0 +1,3 @@
+[submodule "resources/code"]
+	path = resources/code
+	url = git@github.com:aws-samples/devsecops-workshop-on-aws.git
