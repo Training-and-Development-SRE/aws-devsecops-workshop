@@ -38,5 +38,11 @@ To get the best results when testing your templates with TaskCat, it’s helpful
 
 ![soaktest](/images/soaktest.png)
 
+The stack is now waiting for manual approval. However, we received an email. It says:
+
+```none
+A Config rule is not compliant in your environment. Please open the Config Dashboard for further details.
+```
+
 <!-- https://aws.amazon.com/blogs/infrastructure-and-automation/up-your-aws-cloudformation-testing-game-using-taskcat/ -->
 <!-- https://aws.amazon.com/blogs/infrastructure-and-automation/a-deep-dive-into-testing-with-taskcat/ -->

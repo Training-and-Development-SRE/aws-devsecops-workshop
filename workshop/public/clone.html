@@ -253,28 +253,90 @@
           
       </a>
       
-              
-    </li>
-  
- 
-
+      
+        <ul>
           
           
+            
+          
+          
+          
+        
+          
+            
+            
 
 
  
   
     
-    <li data-nav-id="/detective.html" title="Root Cause Analysis" class="dd-item 
+    <li data-nav-id="/config/soak.html" title="Soak Testing Environment" class="dd-item 
         
         
         
         ">
-      <a href="./detective.html">
-          <b> </b>Root Cause Analysis
+      <a href="./config/soak.html">
+          <b> </b>Soak Testing Environment
           
       </a>
       
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/config/works.html" title="How AWS Config Works" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./config/works.html">
+          <b> </b>How AWS Config Works
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/config/rules.html" title="Evaluating Resources with Rules" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./config/rules.html">
+          <b> </b>Evaluating Resources with Rules
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -385,26 +447,26 @@
 	<ol>
 <li><a href="https://help.github.com/articles/cloning-a-repository/">Clone</a> this repository. From your terminal application, execute the following command. This creates a directory named aws-devsecops-workshop in your current directory.</li>
 </ol>
-<pre><code>git clone https://github.com/aws-samples/aws-devsecops-workshop
+<pre><code>git clone https://github.com/aws-samples/devsecops-workshop-on-aws
 </code></pre><ol start="2">
 <li><a href="http://docs.aws.amazon.com/codecommit/latest/userguide/getting-started.html#getting-started-create-repo">Create AWS CodeCommit repository</a> in your AWS account and <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/how-to-create-repository.html#how-to-create-repository-cli">set up AWS CLI</a>. Name your repository wordpress-cfn. Alternatively, from your terminal application, execute the following command and note the <code>cloneUrlHttp URL</code> in the response from the CLI.</li>
 </ol>
 <pre><code>aws codecommit create-repository --repository-name wordpress-cfn --repository-description &quot;This template installs WordPress with a local MySQL database for storage&quot;
 </code></pre><ol start="3">
-<li><a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up.html">Create the local git setup</a> required to push code to CodeCommit repository and add a new remote. From your terminal application, within the wordpress-dfn directory, execute the following command:</li>
+<li><a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up.html">Create the local git setup</a> required to push code to CodeCommit repository and add a new remote. From your terminal application, within the &lsquo;devsecops-workshop-on-aws&rsquo; directory, execute the following command:</li>
 </ol>
-<pre><code>git init &amp;&amp; git remote add AWSCodeCommit HTTP_CLONE_URL_FROM_STEP_2
+<pre><code>git init &amp;&amp; git remote add AWSCodeCommit codecommit::eu-west-1://wordpress-cfn
 </code></pre><ol start="4">
 <li><a href="https://github.com/awslabs/git-secrets">Install git-secrets</a> and ensure the git repository is scanned for secrets on each commit.</li>
 </ol>
 <pre><code>git secrets --install
 git secrets --register-aws
+</code></pre><ol start="5">
+<li>Push the repository into AWS Code Commit.</li>
+</ol>
+<pre><code>git push AWSCodeCommit master
 </code></pre>
 <div class="notices tip" ><p>git-secrets scans commits, commit messages, and &ndash;no-ff merges to prevent adding secrets into your git repositories. If a commit, commit message, or any commit in a &ndash;no-ff merge history matches one of your configured prohibited regular expression patterns, then the commit is rejected.</p>
-</div>
-
-
-<div class="notices warning" ><p><a href="https://github.com/aws-samples/aws-devsecops-workshop/blob/master/wordpress/wordpress-single-instance.yaml">https://github.com/aws-samples/aws-devsecops-workshop/blob/master/wordpress/wordpress-single-instance.yaml</a></p>
 </div>
 
 
@@ -573,6 +635,21 @@ git secrets --register-aws
 
                     
                     
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
 
                     
@@ -591,6 +668,25 @@ git secrets --register-aws
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         

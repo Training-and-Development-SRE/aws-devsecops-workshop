@@ -253,28 +253,90 @@
           
       </a>
       
-              
-    </li>
-  
- 
-
+      
+        <ul>
           
           
+            
+          
+          
+          
+        
+          
+            
+            
 
 
  
   
     
-    <li data-nav-id="/detective.html" title="Root Cause Analysis" class="dd-item 
+    <li data-nav-id="/config/soak.html" title="Soak Testing Environment" class="dd-item 
         
         
         
         ">
-      <a href="./detective.html">
-          <b> </b>Root Cause Analysis
+      <a href="./config/soak.html">
+          <b> </b>Soak Testing Environment
           
       </a>
       
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/config/works.html" title="How AWS Config Works" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./config/works.html">
+          <b> </b>How AWS Config Works
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/config/rules.html" title="Evaluating Resources with Rules" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./config/rules.html">
+          <b> </b>Evaluating Resources with Rules
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -385,10 +447,6 @@
 	<p>Launch the CloudFormation template that creates the Pipeline in your account.</p>
 <p><a href="https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=devsecops-wordpress-pipeline&amp;templateURL=https://artifact-store-ejanicas.s3-eu-west-1.amazonaws.com/basic-pipeline.yaml"><img src="https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg" alt="Launch Pipeline Stack"></a></p>
 <!-- raw HTML omitted -->
-
-<div class="notices warning" ><p>Explain the pipeline better</p>
-</div>
-
 <p>Lets dive into it. This CloudFormation templates builds a pipeline for a sample WordPress site in a stack. The pipeline is separated into four stages. Each stage must contain at least one action, which is a task the pipeline performs on your artifacts (your input). A stage organizes actions in a pipeline. CodePipeline must complete all actions in a stage before the stage processes new artifacts, for example, if you submitted new input to rerun the pipeline.</p>
 <p>The pipeline that performs the following workflow:</p>
 <ol>
@@ -579,6 +637,21 @@
 
                     
                     
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
 
                     
@@ -597,6 +670,25 @@
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         

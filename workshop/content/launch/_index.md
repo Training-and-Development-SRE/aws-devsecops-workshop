@@ -12,10 +12,6 @@ Launch the CloudFormation template that creates the Pipeline in your account.
 
 <!-- [![Launch Config Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=config&templateURL=https://artifact-store-ejanicas.s3-eu-west-1.amazonaws.com/config.yaml) -->
 
-{{% notice warning %}}
-Explain the pipeline better
-{{% /notice %}}
-
 Lets dive into it. This CloudFormation templates builds a pipeline for a sample WordPress site in a stack. The pipeline is separated into four stages. Each stage must contain at least one action, which is a task the pipeline performs on your artifacts (your input). A stage organizes actions in a pipeline. CodePipeline must complete all actions in a stage before the stage processes new artifacts, for example, if you submitted new input to rerun the pipeline.
 
 The pipeline that performs the following workflow:

@@ -26,7 +26,7 @@ During validation, AWS CloudFormation first checks if the template is valid JSON
 
 To check the operational validity, you need to attempt to create the stack. There is no sandbox or test area for AWS CloudFormation stacks, so you are charged for the resources you create during testing.
 
-If we go back to the CodePipeline console, the execution is stil failing. Let's have a look again at the build logs.
+If commit and push our changes, and go back to the CodePipeline console, the execution is stil failing. Let's have a look again at the build logs.
 
 ![taillogs-2](/images/taillogs-2.png)
 
