@@ -14,7 +14,7 @@ pygmentsCodeFences = true
 pygmentsStyle = "monokai"
 
 [params]
-  editURL = "https://code.amazon.com/packages/Aws-workshop-template/blobs/master/--/workshop/content/"
+  editURL = "https://github.com/aws-samples/aws-devsecops-workshop"
   description = "DevSecOps on AWS"
   author = "Eduardo Janicas"
   disableBreadcrumb = false
