@@ -3,18 +3,18 @@
 <html lang="en" class="js csstransforms3d">
 <head>
   <meta charset="utf-8">
-  <meta property="og:title" content="My AWS Workshop" />
+  <meta property="og:title" content="DevSecOps on AWS" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="generator" content="Hugo 0.69.0" />
+  <meta name="generator" content="Hugo 0.78.1" />
   <meta name="description" content="DevSecOps on AWS">
 <meta name="author" content="Eduardo Janicas">
 
   <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 <link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 
-  <title>Testing a Template :: My AWS Workshop</title>
+  <title>Testing a Template :: DevSecOps on AWS</title>
 
   
   <link href="./css/nucleus.css" rel="stylesheet">
@@ -45,7 +45,7 @@
   
 </head>
 
-<body class="" data-url="/taskcat.html">
+<body class="" data-url="./taskcat.html">
   <nav id="sidebar" class="">
 
 
@@ -222,7 +222,7 @@
   
     
     <li data-nav-id="/taskcat.html" title="Testing a Template" class="dd-item 
-        
+        parent
         active
         
         ">
@@ -455,13 +455,13 @@
 <li>reporting – To generate test report with logs from each test execution</li>
 </ul>
 <p>The tests mapping defines test scenarios that will be performed by TaskCat. You can define multiple test scenarios in the tests mapping, and each test scenario must specify a parameter input file name and an AWS CloudFormation template file name. Optionally, you can define the AWS Regions in which the test needs to be executed. This Region list will override the global Region list. For example, if your AWS CloudFormation template creates AWS resources that are not available in all Regions, you need to override the global Region list and specify only those Regions where those resources are supported.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">project</span>:
-  <span style="color:#66d9ef">name</span>: wordpress-single-instance
-  <span style="color:#66d9ef">regions</span>:
-    - eu-west<span style="color:#ae81ff">-1</span>
-<span style="color:#66d9ef">tests</span>:
-  <span style="color:#66d9ef">default</span>:
-    <span style="color:#66d9ef">template</span>: wordpress/wordpress-single-instance.yaml
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">project</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">wordpress-single-instance</span>
+  <span style="color:#f92672">regions</span>:
+    - <span style="color:#ae81ff">eu-west-1</span>
+<span style="color:#f92672">tests</span>:
+  <span style="color:#f92672">default</span>:
+    <span style="color:#f92672">template</span>: <span style="color:#ae81ff">wordpress/wordpress-single-instance.yaml</span>
 </code></pre></div><p>TaskCat performs multiple actions, such as template validation, parameter validation, and staging content into an Amazon Simple Storage Service (Amazon S3) bucket, before launching the AWS CloudFormation stack. It launches the stack in the defined Regions, simultaneously. And it regularly polls the AWS CloudFormation stack status to check if the stack creation is finished. After the stack has been successfully created, TaskCat deletes it. How much time TaskCat takes to finish the testing depends on how many tests you have defined in your TaskCat configuration file and how long each stack creation and deletion takes. After the TaskCat run is completed, it generates a report in HTML format in the directory from where you are running the TaskCat command.</p>
 
 <div class="notices tip" ><p>To get the best results when testing your templates with TaskCat, it’s helpful to understand three primary files that TaskCat uses: Standard parameter file, Override parameter files and the configuration file. <a href="https://aws.amazon.com/blogs/infrastructure-and-automation/a-deep-dive-into-testing-with-taskcat/">Take a look</a> at each of these files in more detail, and at how you can use them to create and configure the test cases for your CloudFormation templates.</p>

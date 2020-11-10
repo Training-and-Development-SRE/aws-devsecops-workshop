@@ -3,18 +3,18 @@
 <html lang="en" class="js csstransforms3d">
 <head>
   <meta charset="utf-8">
-  <meta property="og:title" content="My AWS Workshop" />
+  <meta property="og:title" content="DevSecOps on AWS" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="generator" content="Hugo 0.69.0" />
+  <meta name="generator" content="Hugo 0.78.1" />
   <meta name="description" content="DevSecOps on AWS">
 <meta name="author" content="Eduardo Janicas">
 
   <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 <link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 
-  <title>Validating a Template :: My AWS Workshop</title>
+  <title>Validating a Template :: DevSecOps on AWS</title>
 
   
   <link href="./css/nucleus.css" rel="stylesheet">
@@ -45,7 +45,7 @@
   
 </head>
 
-<body class="" data-url="/validate.html">
+<body class="" data-url="./validate.html">
   <nav id="sidebar" class="">
 
 
@@ -178,7 +178,7 @@
   
     
     <li data-nav-id="/validate.html" title="Validating a Template" class="dd-item 
-        
+        parent
         active
         
         ">
@@ -445,11 +445,11 @@
 
 
 	<p>The <code>InstanceType</code> parameter was missing on the template. Lets make the default a <code>t3.small</code> instance.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">Parameters</span>:
-  <span style="color:#66d9ef">InstanceType</span>:
-    <span style="color:#66d9ef">Default</span>: t3.small
-    <span style="color:#66d9ef">Description</span>: WebServer EC2 instance type
-    <span style="color:#66d9ef">Type</span>: String
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Parameters</span>:
+  <span style="color:#f92672">InstanceType</span>:
+    <span style="color:#f92672">Default</span>: <span style="color:#ae81ff">t3.small</span>
+    <span style="color:#f92672">Description</span>: <span style="color:#ae81ff">WebServer EC2 instance type</span>
+    <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">String</span>
 </code></pre></div><p>To check your template file for syntax errors, we used the <code>aws cloudformation validate-template</code> command.</p>
 
 <div class="notices tip" ><p>The <code>aws cloudformation validate-template</code> command is designed to check only the syntax of your template. It does not ensure that the property values that you have specified for a resource are valid for that resource. Nor does it determine the number of resources that will exist when the stack is created.</p>

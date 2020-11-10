@@ -35,6 +35,6 @@ hrefTargetBlank = true
 
 [Languages]
 [Languages.en]
-title = "My AWS Workshop"
+title = "DevSecOps on AWS"
 weight = 1
 languageName = "English"
