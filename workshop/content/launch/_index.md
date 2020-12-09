@@ -12,7 +12,7 @@ Launch the CloudFormation template that creates the Pipeline in your account.
 
 <!-- [![Launch Config Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=config&templateURL=https://artifact-store-ejanicas.s3-eu-west-1.amazonaws.com/config.yaml) -->
 
-Lets dive into it. This CloudFormation templates builds a pipeline for a sample WordPress site in a stack. The pipeline is separated into four stages. Each stage must contain at least one action, which is a task the pipeline performs on your artifacts (your input). A stage organizes actions in a pipeline. CodePipeline must complete all actions in a stage before the stage processes new artifacts, for example, if you submitted new input to rerun the pipeline.
+Lets dive into the template file located in `./pipeline/basic-pipeline.yaml`. This CloudFormation templates builds a pipeline for a sample WordPress site in a stack. The pipeline is separated into four stages. Each stage must contain at least one action, which is a task the pipeline performs on your artifacts (your input). A stage organizes actions in a pipeline. CodePipeline must complete all actions in a stage before the stage processes new artifacts, for example, if you submitted new input to rerun the pipeline.
 
 The pipeline that performs the following workflow:
 
@@ -40,4 +40,4 @@ One of the validation tests failed. The output logs the following message:
 An error occurred (ValidationError) when calling the ValidateTemplate operation: [/Parameters/InstanceType/Default] 'null' values are not allowed in templates
 ```
 
-Can you find the error on the template?
+We are now deploying the template in `./wordpress/wordpress-single-instance.yaml`. Can you find the error on the template?

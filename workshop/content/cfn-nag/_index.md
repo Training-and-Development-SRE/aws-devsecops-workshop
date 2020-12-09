@@ -6,7 +6,7 @@ chapter = true
 pre = "<b> </b>"
 +++
 
-It seems like our security groups are to permissive. Let's make this a bit more restrictive in the CloudFormation Template:
+Our Security group defined on the `wordpress/wordpress-single-instance.yaml` file on line 141 is too permissive because we have a range of ports open. Let’s narrow the range to only the one port we need for Wordpress to work. In the code sample below, you will note the Security Group resource restricts to only port 80.
 
 ```yaml
 WebServerSecurityGroup:
@@ -19,6 +19,14 @@ WebServerSecurityGroup:
         FromPort: 80
         IpProtocol: tcp
         ToPort: 80
+```
+
+Commit the changes and push it to CodeCommit:
+
+```bash
+git add wordpress/wordpress-single-instance.yaml
+git commit -m "Closed down SG to port 80" 
+git push AWSCodeCommit master 
 ```
 
 The [`cfn-nag` tool](https://github.com/stelligent/cfn_nag) parses a collection of CloudFormation templates and applies rules to find code patterns that could lead to insecure infrastructure.  The results of the tool include the logical resource identifiers for violating resources and an explanation of what rule has been violated.
