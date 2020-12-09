@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 <link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 
-  <title>Conclusion :: DevSecOps on AWS</title>
+  <title>Conclusion and Clean Up :: DevSecOps on AWS</title>
 
   
   <link href="./css/nucleus.css" rel="stylesheet">
@@ -349,13 +349,13 @@
  
   
     
-    <li data-nav-id="/conclusion.html" title="Conclusion" class="dd-item 
+    <li data-nav-id="/conclusion.html" title="Conclusion and Clean Up" class="dd-item 
         parent
         active
         
         ">
       <a href="./conclusion.html">
-          <b> </b>Conclusion
+          <b> </b>Conclusion and Clean Up
           
       </a>
       
@@ -422,7 +422,7 @@
           
           
           
-          <a href='./'>DevSecOps on AWS</a> > Conclusion
+          <a href='./'>DevSecOps on AWS</a> > Conclusion and Clean Up
           
           
           
@@ -438,7 +438,7 @@
       <div id="chapter">
         
         <div id="body-inner">
-          <h1>Conclusion</h1>
+          <h1>Conclusion and Clean Up</h1>
           
           
 
@@ -446,7 +446,10 @@
 
 	<p><img src="./images/completed.png" alt="completed"></p>
 <p>It&rsquo;s done! We managed to deploy our Wordpress stack making sure we have security in our development pipeline. To get started building your DevSecOps approach, take a step back and ask yourself, “What am I trying to accomplish, and what security controls are needed?”. This step helps you create a focused use case, and from there, you can identify options for security tools, automation requirements, and organizational roles and processes that you need to address. Finally, include an audit, logging, and monitoring solution in your production environment that combines account activity and AWS resources from AWS CloudTrail and AWS CloudWatch with data on security incidents to provide ongoing insights, as well as other controls, such as Identity and Access Management (IAM) and network security.</p>
-
+<p>To cleanup the resources, destroy the CloudFormation template in your account and the CodeCommit repository:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws cloudformation delete-stack --stack-name devsecops-wordpress-pipeline
+aws codecommit delete-repository --repository-name wordpress-cfn
+</code></pre></div>
 
 
 

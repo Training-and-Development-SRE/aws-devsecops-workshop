@@ -349,13 +349,13 @@
  
   
     
-    <li data-nav-id="/conclusion.html" title="Conclusion" class="dd-item 
+    <li data-nav-id="/conclusion.html" title="Conclusion and Clean Up" class="dd-item 
         
         
         
         ">
       <a href="./conclusion.html">
-          <b> </b>Conclusion
+          <b> </b>Conclusion and Clean Up
           
       </a>
       
@@ -444,7 +444,7 @@
 
 
 
-	<p>It seems like our security groups are to permissive. Let&rsquo;s make this a bit more restrictive in the CloudFormation Template:</p>
+	<p>Our Security group defined on the <code>wordpress/wordpress-single-instance.yaml</code> file on line 141 is too permissive because we have a range of ports open. Let’s narrow the range to only the one port we need for Wordpress to work. In the code sample below, you will note the Security Group resource restricts to only port 80.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">WebServerSecurityGroup</span>:
   <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">AWS::EC2::SecurityGroup</span>
   <span style="color:#f92672">Properties</span>:
@@ -455,6 +455,10 @@
         <span style="color:#f92672">FromPort</span>: <span style="color:#ae81ff">80</span>
         <span style="color:#f92672">IpProtocol</span>: <span style="color:#ae81ff">tcp</span>
         <span style="color:#f92672">ToPort</span>: <span style="color:#ae81ff">80</span>
+</code></pre></div><p>Commit the changes and push it to CodeCommit:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add wordpress/wordpress-single-instance.yaml
+git commit -m <span style="color:#e6db74">&#34;Closed down SG to port 80&#34;</span> 
+git push AWSCodeCommit master 
 </code></pre></div><p>The <a href="https://github.com/stelligent/cfn_nag"><code>cfn-nag</code> tool</a> parses a collection of CloudFormation templates and applies rules to find code patterns that could lead to insecure infrastructure.  The results of the tool include the logical resource identifiers for violating resources and an explanation of what rule has been violated.</p>
 <p><img src="https://github.com/stelligent/cfn_nag/raw/master/logo.png?raw=true" alt="cfn-nag"></p>
 <p>While there are quite a number of particular rules the tool will attempt to match, the rough categories are:</p>

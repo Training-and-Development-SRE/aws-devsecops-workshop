@@ -349,13 +349,13 @@
  
   
     
-    <li data-nav-id="/conclusion.html" title="Conclusion" class="dd-item 
+    <li data-nav-id="/conclusion.html" title="Conclusion and Clean Up" class="dd-item 
         
         
         
         ">
       <a href="./conclusion.html">
-          <b> </b>Conclusion
+          <b> </b>Conclusion and Clean Up
           
       </a>
       
@@ -447,7 +447,7 @@
 	<p>Launch the CloudFormation template that creates the Pipeline in your account.</p>
 <p><a href="https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=devsecops-wordpress-pipeline&amp;templateURL=https://artifact-store-ejanicas.s3-eu-west-1.amazonaws.com/basic-pipeline.yaml"><img src="https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg" alt="Launch Pipeline Stack"></a></p>
 <!-- raw HTML omitted -->
-<p>Lets dive into it. This CloudFormation templates builds a pipeline for a sample WordPress site in a stack. The pipeline is separated into four stages. Each stage must contain at least one action, which is a task the pipeline performs on your artifacts (your input). A stage organizes actions in a pipeline. CodePipeline must complete all actions in a stage before the stage processes new artifacts, for example, if you submitted new input to rerun the pipeline.</p>
+<p>Lets dive into the template file located in <code>./pipeline/basic-pipeline.yaml</code>. This CloudFormation templates builds a pipeline for a sample WordPress site in a stack. The pipeline is separated into four stages. Each stage must contain at least one action, which is a task the pipeline performs on your artifacts (your input). A stage organizes actions in a pipeline. CodePipeline must complete all actions in a stage before the stage processes new artifacts, for example, if you submitted new input to rerun the pipeline.</p>
 <p>The pipeline that performs the following workflow:</p>
 <ol>
 <li>
@@ -470,7 +470,7 @@
 <p><img src="./images/taillogs-1.png" alt="taillogs-1"></p>
 <p>One of the validation tests failed. The output logs the following message:</p>
 <pre><code class="language-none" data-lang="none">An error occurred (ValidationError) when calling the ValidateTemplate operation: [/Parameters/InstanceType/Default] 'null' values are not allowed in templates
-</code></pre><p>Can you find the error on the template?</p>
+</code></pre><p>We are now deploying the template in <code>./wordpress/wordpress-single-instance.yaml</code>. Can you find the error on the template?</p>
 
 
 
